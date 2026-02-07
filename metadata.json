@@ -1,0 +1,5 @@
+{
+  "name": "South Solok Data Initiative (SSDI)",
+  "description": "An integrated spatial intelligence platform for South Solok Regency. Features real-time Google Earth Engine analysis for environmental monitoring (EUDR, Carbon, InSAR), socio-economic mapping, disaster mitigation, and sustainable development planning.",
+  "requestFramePermissions": []
+}
