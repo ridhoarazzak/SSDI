@@ -7,59 +7,53 @@ export const analyzeGeoData = async (
   regionName: string,
   layerType: LayerType,
   stats: GeoStats[],
+  lang: 'id' | 'en' = 'id',
   userQuery?: string
 ): Promise<string> => {
   if (!process.env.API_KEY) {
-    return "API Key is missing. Please configure process.env.API_KEY.";
+    return lang === 'id' 
+      ? "Kunci API tidak ditemukan. Harap konfigurasi process.env.API_KEY." 
+      : "API Key not found. Please configure process.env.API_KEY.";
   }
 
   const model = "gemini-3-flash-preview";
-  
-  // Format the data for the model
   const dataSummary = stats.map(s => `${s.date}: ${s.value.toFixed(2)}`).join('\n');
   
-  const prompt = `
-    You are an expert Geospatial Analyst working with Google Earth Engine data.
-    
-    Context:
-    - Region: ${regionName}
-    - Analysis Layer: ${layerType}
-    - Data Series (Time vs Value):
+  const systemInstruction = lang === 'id' 
+    ? "Anda adalah pakar Analis Geospasial. Berikan analisis dalam Bahasa Indonesia yang profesional, teknis, dan padat."
+    : "You are a Geospatial Analysis expert. Provide professional, technical, and concise analysis in English.";
+
+  const prompt = lang === 'id' 
+    ? `Konteks:
+    - Wilayah: ${regionName}
+    - Lapisan Analisis: ${layerType}
+    - Deret Data:
     ${dataSummary}
 
-    ${userQuery ? `User Question: ${userQuery}` : `Task: Provide a concise executive summary of the environmental trends observed in this data. specific anomalies (peaks/drops). Mention potential real-world causes (e.g., seasonal drought, deforestation, urbanization) based on the layer type.`}
+    ${userQuery ? `Pertanyaan Pengguna: ${userQuery}` : `Tugas: Berikan ringkasan eksekutif tentang tren lahan, anomali data, dan rekomendasi strategis.`}
     
-    Keep the response professional, scientific, but accessible. Format with clear paragraphs.
-  `;
+    PENTING: Berikan respons HANYA dalam Bahasa Indonesia.`
+    : `Context:
+    - Region: ${regionName}
+    - Analysis Layer: ${layerType}
+    - Data Series:
+    ${dataSummary}
+
+    ${userQuery ? `User Question: ${userQuery}` : `Task: Provide an executive summary of land trends, data anomalies, and strategic recommendations.`}
+    
+    IMPORTANT: Provide the response ONLY in English.`;
 
   try {
     const response = await ai.models.generateContent({
       model: model,
       contents: prompt,
+      config: { systemInstruction }
     });
-    return response.text || "No analysis could be generated.";
+    return response.text || (lang === 'id' ? "Tidak ada analisis yang tersedia." : "No analysis available.");
   } catch (error) {
     console.error("Gemini Analysis Error:", error);
-    return "An error occurred while analyzing the geospatial data. Please try again.";
+    return lang === 'id' 
+      ? "Terjadi kesalahan saat menganalisis data geospasial."
+      : "An error occurred while analyzing geospatial data.";
   }
 };
-
-export const chatWithData = async (
-  history: { role: string; text: string }[],
-  currentMessage: string
-): Promise<string> => {
-   if (!process.env.API_KEY) return "API Key missing.";
-
-   // Simple chat interface for follow-up questions
-   const model = "gemini-3-flash-preview";
-   const chat = ai.chats.create({
-      model: model,
-      history: history.map(h => ({
-        role: h.role === 'user' ? 'user' : 'model',
-        parts: [{ text: h.text }]
-      })),
-   });
-
-   const result = await chat.sendMessage({ message: currentMessage });
-   return result.text || "No response.";
-  }
