@@ -38,7 +38,7 @@ const DASHBOARDS: DashboardConfig[] = [
   {
     id: 'bantuan_pangan',
     title: { id: 'Bantuan Pangan', en: 'Food Assistance' },
-    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/bantuan-pangan',
+    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/bantuanpangan',
     icon: 'fa-bowl-rice',
     layerType: LayerType.URBAN,
     description: { id: 'Analisis distribusi bantuan pangan masyarakat', en: 'Food aid distribution analytics' }
