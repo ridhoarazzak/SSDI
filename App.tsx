@@ -127,8 +127,8 @@ const DASHBOARDS: DashboardConfig[] = [
 
 const TRANSLATIONS = {
   id: {
-    sidebarHeader: 'DATA SPASIAL',
-    sidebarSub: 'Solok Selatan',
+    sidebarHeader: 'South Solok',
+    sidebarSub: 'Spatial Data Initiative',
     menuTitle: 'Menu Dashboard',
     customUrl: 'Input URL GEE Kustom',
     footerTitle: 'SSDI - SOUTH SOLOK DATA INITIATIVE',
@@ -136,8 +136,8 @@ const TRANSLATIONS = {
     powered: 'Didukung oleh Google Earth Engine'
   },
   en: {
-    sidebarHeader: 'SPATIAL DATA',
-    sidebarSub: 'South Solok',
+    sidebarHeader: 'South Solok',
+    sidebarSub: 'Spatial Data Initiative',
     menuTitle: 'Dashboard Menu',
     customUrl: 'Custom GEE URL Input',
     footerTitle: 'SSDI - SOUTH SOLOK SPATIAL DATA INITIATIVE',
