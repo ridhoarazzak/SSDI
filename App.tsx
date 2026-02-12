@@ -46,7 +46,7 @@ const DASHBOARDS: DashboardConfig[] = [
   {
     id: 'data_kemiskinan',
     title: { id: 'Data Kemiskinan', en: 'Poverty Data' },
-    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/kemiskinan',
+    url: 'https://mrgridhoarazzak.users.earthengine.app/view/monitoringdanprediksikemiskinan20-23',
     icon: 'fa-users-line',
     layerType: LayerType.URBAN,
     description: { id: 'Analisis Sebaran Data Kemiskinan Wilayah', en: 'Regional poverty distribution mapping' }
@@ -54,7 +54,7 @@ const DASHBOARDS: DashboardConfig[] = [
   {
     id: 'sdg_solsel',
     title: { id: "SDG's Solok Selatan", en: "South Solok SDG's" },
-    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/sdgs-solsel',
+    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/sdgs2-solok-selatan',
     icon: 'fa-chart-line',
     layerType: LayerType.CUSTOM,
     description: { id: 'Pencapaian Tujuan Pembangunan Berkelanjutan', en: 'Sustainable development goal tracking' }
@@ -70,7 +70,7 @@ const DASHBOARDS: DashboardConfig[] = [
   {
     id: 'kelayakan_pembangunan',
     title: { id: 'Kelayakan Pembangunan', en: 'Development Suitability' },
-    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/kelayakan',
+    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/kelayakan-pembangunan',
     icon: 'fa-building-circle-check',
     layerType: LayerType.URBAN,
     description: { id: 'Analisis Kesesuaian Lahan Pembangunan', en: 'Land use suitability for construction' }
@@ -78,7 +78,7 @@ const DASHBOARDS: DashboardConfig[] = [
   {
     id: 'mitigasi_bencana',
     title: { id: 'Mitigasi Bencana', en: 'Disaster Mitigation' },
-    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/mitigasi',
+    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/miyigasi-bencana',
     icon: 'fa-house-fire',
     layerType: LayerType.CUSTOM,
     description: { id: 'Analisis Risiko & Mitigasi Bencana', en: 'Disaster risk and mitigation planning' }
@@ -86,7 +86,7 @@ const DASHBOARDS: DashboardConfig[] = [
   {
     id: 'insar_monitor',
     title: { id: 'Analisis InSAR', en: 'InSAR Analysis' },
-    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/insar-solok-selatan',
+    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/insar',
     icon: 'fa-arrows-up-down',
     layerType: LayerType.CUSTOM,
     description: { id: 'Analisis Deformasi Permukaan (Radar)', en: 'Surface deformation radar analysis' }
@@ -94,7 +94,7 @@ const DASHBOARDS: DashboardConfig[] = [
   {
     id: 'dashboard_mrv',
     title: { id: 'Dashboard MRV', en: 'MRV Dashboard' },
-    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/mrv',
+    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/mrv-prediction-sako-utara',
     icon: 'fa-satellite-dish',
     layerType: LayerType.CUSTOM,
     description: { id: 'Prediction & Verification (Gako Utara)', en: 'Verification and prediction monitor' }
