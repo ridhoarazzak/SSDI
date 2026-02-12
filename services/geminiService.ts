@@ -62,4 +62,4 @@ export const chatWithData = async (
 
    const result = await chat.sendMessage({ message: currentMessage });
    return result.text || "No response.";
-}
+  }
