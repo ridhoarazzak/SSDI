@@ -22,7 +22,7 @@ const Header = () => {
           SSDI
         </h1>
         <p className="text-[10px] text-slate-400 font-medium">
-          South Solok Data Initiative
+          South Solok Spastial Data Initiative
         </p>
       </div>
     </div>
