@@ -2,16 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-// Tambahkan ini di bagian Header/Navbar dalam index.tsx
 const Header = () => {
   return (
     <div className="absolute top-4 left-4 z-[50] flex items-center gap-3 bg-slate-900/80 backdrop-blur-md p-2 pr-4 rounded-xl border border-slate-700 shadow-2xl">
-      {/* Logo SSDI */}
+      {/* Logo SSDI - Perbaikan Path di sini */}
       <img 
-        src="/logo_S3DI.png" // Path ini otomatis membaca folder public
+        src="/logo_S3DI.png" 
         alt="Logo SSDI" 
-        className="w-10 h-10 object-contain"
-        onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/40?text=S"; }} // Fallback jika link mati
+        className="w-10 h-10 object-contain rounded-md"
+        onError={(e) => { 
+          const target = e.currentTarget;
+          target.src = "https://via.placeholder.com/40?text=S"; 
+        }} 
       />
       
       {/* Teks Inisiatif */}
@@ -35,6 +37,9 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
+    {/* Panggil Header di sini agar muncul di atas App (Peta) */}
+    <Header />
     <App />
   </React.StrictMode>
 );
+      
