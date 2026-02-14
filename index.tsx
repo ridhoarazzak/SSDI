@@ -8,7 +8,7 @@ const Header = () => {
     <div className="absolute top-4 left-4 z-[50] flex items-center gap-3 bg-slate-900/80 backdrop-blur-md p-2 pr-4 rounded-xl border border-slate-700 shadow-2xl">
       {/* Logo SSDI */}
       <img 
-        src="/logo-ssdi.png" // Path ini otomatis membaca folder public
+        src="/public/logo_S3DI.png" // Path ini otomatis membaca folder public
         alt="Logo SSDI" 
         className="w-10 h-10 object-contain"
         onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/40?text=S"; }} // Fallback jika link mati
