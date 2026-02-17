@@ -52,6 +52,14 @@ const DASHBOARDS: DashboardConfig[] = [
     description: { id: 'Analisis Sebaran Data Kemiskinan Wilayah', en: 'Regional poverty distribution mapping' }
   },
   {
+    id: 'prioritas_csr',
+    title: { id: 'Prioritas CSR', en: 'CSR Priorities' },
+    url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/prioritas-csr',
+    icon: 'fa-hand-holding-heart',
+    layerType: LayerType.CUSTOM,
+    description: { id: 'Analisis Prioritas Program CSR Wilayah', en: 'Regional CSR priority analysis' }
+  },
+  {
     id: 'sdg_solsel',
     title: { id: "SDG's Solok Selatan", en: "South Solok SDG's" },
     url: 'https://ee-mrgridhoarazzak.projects.earthengine.app/view/sdgs2-solok-selatan',
